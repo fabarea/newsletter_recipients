@@ -1,0 +1,5 @@
+# cat=basic//; type=boolean; label=Show BE module: If enabled a BE module will be display to manage the recipients. BE reload is required.
+load_be_module = 0
+
+# cat=basic//; type=int; label= Default page id: When creating a new record, assign a default page id.
+default_pid = 1

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2011-10-17T20:22:32Z" product-name="local lang module">
+		<header/>
+		<body>
+			<trans-unit id="active">
+				<source>Active</source>
+			</trans-unit>
+			<trans-unit id="active.0">
+				<source>Yes</source>
+			</trans-unit>
+			<trans-unit id="active.1">
+				<source>No</source>
+			</trans-unit>
+			<trans-unit id="action.update.recipients">
+				<source>Update recipients</source>
+			</trans-unit>
+			<trans-unit id="csv.recipients">
+				<source>CSV list of recipients</source>
+			</trans-unit>
+			<trans-unit id="delete.existing.recipients">
+				<source>Delete existing recipients before adding new ones.</source>
+			</trans-unit>
+			<trans-unit id="action.update.recipients">
+				<source>Update recipients</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
