@@ -66,7 +66,6 @@ class UpdateRecipientsMenuItem extends AbstractComponentView
         $pageRenderer->loadRequireJsModule('TYPO3/CMS/NewsletterRecipients/UpdateRecipientsMenuItem');
     }
 
-
     /**
      * Returns the URL to a given module
      *
@@ -74,7 +73,7 @@ class UpdateRecipientsMenuItem extends AbstractComponentView
      * @param array $urlParameters URL parameters that should be added as key value pairs
      * @return string Calculated URL
      */
-    public function getModuleUrl($moduleName, $urlParameters = [])
+    public function getModuleUrl($moduleName, $urlParameters = []): string
     {
         $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
         try {
