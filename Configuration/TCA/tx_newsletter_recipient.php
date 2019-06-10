@@ -92,19 +92,8 @@ return [
                 'visible' => true,
                 'editable' => true,
             ],
-            'tstamp' => [
-                'visible' => false,
-                'format' => \Fab\Vidi\Formatter\Date::class,
-                'label' => 'LLL:EXT:newsletter_recipients/Resources/Private/Language/locallang.xlf:tstamp',
-            ],
-            'crdate' => [
-                'visible' => false,
-                'format' => \Fab\Vidi\Formatter\Date::class,
-                'label' => 'LLL:EXT:newsletter_recipients/Resources/Private/Language/locallang.xlf:crdate',
-            ],
             'hidden' => [
                 'renderer' => \Fab\Vidi\Grid\VisibilityRenderer::class,
-                'label' => 'LLL:EXT:newsletter_recipients/Resources/Private/Language/locallang.xlf:active',
                 'width' => '3%',
             ],
             '__buttons' => [
