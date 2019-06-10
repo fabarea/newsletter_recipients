@@ -8,8 +8,8 @@ namespace Fab\NewsletterRecipients\View\MenuItem;
  * LICENSE.md file that was distributed with this source code.
  */
 
-use Fab\Messenger\Utility\BackendUtility;
 use Fab\NewsletterRecipients\Module\NewsletterRecipientModule;
+use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Core\Imaging\Icon;
 use Fab\Vidi\View\AbstractComponentView;
 use TYPO3\CMS\Core\Page\PageRenderer;
@@ -49,7 +49,7 @@ class UpdateRecipientsMenuItem extends AbstractComponentView
             ],
         ];
 
-        return BackendUtility::getModuleUrl(NewsletterRecipientModule::getSignature(), $urlParameters);
+        return $this->getModuleUrl(NewsletterRecipientModule::getSignature(), $urlParameters);
     }
 
     /**
@@ -64,5 +64,24 @@ class UpdateRecipientsMenuItem extends AbstractComponentView
         $configuration['paths']['TYPO3/CMS/NewsletterRecipients'] = '../typo3conf/ext/newsletter_recipients/Resources/Public/JavaScript';
         $pageRenderer->addRequireJsConfiguration($configuration);
         $pageRenderer->loadRequireJsModule('TYPO3/CMS/NewsletterRecipients/UpdateRecipientsMenuItem');
+    }
+
+
+    /**
+     * Returns the URL to a given module
+     *
+     * @param string $moduleName Name of the module
+     * @param array $urlParameters URL parameters that should be added as key value pairs
+     * @return string Calculated URL
+     */
+    public function getModuleUrl($moduleName, $urlParameters = [])
+    {
+        $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
+        try {
+            $uri = $uriBuilder->buildUriFromRoute($moduleName, $urlParameters);
+        } catch (\TYPO3\CMS\Backend\Routing\Exception\RouteNotFoundException $e) {
+            $uri = $uriBuilder->buildUriFromRoutePath($moduleName, $urlParameters);
+        }
+        return (string)$uri;
     }
 }

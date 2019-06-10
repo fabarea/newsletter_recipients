@@ -1,7 +1,5 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"
-      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
-      xmlns:m="http://typo3.org/ns/Fab/Messenger/ViewHelpers"
-      xmlns:v="http://typo3.org/ns/Fab/Vidi/ViewHelpers">
+      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
 
 <f:layout name="Default"/>
 
@@ -14,11 +12,11 @@
 
         <div class="form-group">
             <div id="message-body-container" style="{f:if(condition: pageId, then: 'display: none')}">
-                <label for="messenger-body">{f:translate(key: 'csv.recipients')}</label>
+                <label for="recipient-csv-list">{f:translate(key: 'csv.recipients')}</label>
                 <f:form.textarea class="form-control"
                                  name="recipientCsvList"
                                  style="min-height: 400px"
-                                 id="messenger-body"
+                                 id="recipient-csv-list"
                                  placeholder="johne@doe.com;John;Doe"/>
             </div>
 
