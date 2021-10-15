@@ -7,10 +7,10 @@ $EM_CONF[$_EXTKEY] = [
     'author_email' => 'fabien@ecodev.ch',
     'author_company' => 'Ecodev',
     'state' => 'stable',
-    'version' => '1.1.0-dev',
+    'version' => '1.1.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '9.5.0-9.5.99',
+            'typo3' => '10.4.0-10.4.99',
             'vidi' => '3.2.0-0.0.0',
             'messenger' => '2.1.0-0.0.0',
         ],
