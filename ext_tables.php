@@ -1,5 +1,6 @@
 <?php
 
+use Fab\NewsletterRecipients\Controller\NewsletterRecipientController;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3_MODE') || die('Access denied.');
@@ -34,7 +35,7 @@ call_user_func(
             'm1',
             'bottom', // Position
             [
-                'NewsletterRecipient' => 'editMany, updateMany',
+                NewsletterRecipientController::class => 'editMany, updateMany',
             ],
             [
                 'access' => 'user,group',

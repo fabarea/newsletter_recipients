@@ -4,7 +4,7 @@
 	"description": "Very simplistic database structure to cope with newsletter recipients to be connected with EXT:messenger to send newsletters",
 	"homepage": "https://github.com/fabarea/newsletter_recipients",
 	"license": [
-		"GPL-2.0+"
+		"GPL-2.0-or-later"
 	],
 	"keywords": [
 		"TYPO3 CMS",
@@ -19,8 +19,7 @@
 		}
 	},
 	"replace": {
-		"newsletter_recipients": "self.version",
-		"typo3-ter/newsletter-recipients": "self.version"
+		"fab/newsletter-recipients": "self.version"
 	},
 	"extra": {
 		"typo3/cms": {
