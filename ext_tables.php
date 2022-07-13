@@ -67,13 +67,13 @@ call_user_func(
             ->setDataType('tx_newsletter_recipient')
             ->setModuleLanguageFile('LLL:EXT:newsletter_recipients/Resources/Private/Language/tx_newsletter_recipient.xlf')
             ->setIcon('EXT:vidi/Resources/Public/Images/fe_users.svg')
-            #->addMenuMassActionComponents(
-            #    [
-            #        \Fab\Messenger\View\MenuItem\SendMenuItem::class,
-            #        \Fab\NewsletterRecipients\View\MenuItem\UpdateRecipientsMenuItem::class,
-            #        \Fab\Vidi\View\MenuItem\DividerMenuItem::class,
-            #    ]
-            #)
+            ->addMenuMassActionComponents(
+                [
+                    \Fab\Messenger\View\MenuItem\SendMenuItem::class,
+                    \Fab\NewsletterRecipients\View\MenuItem\UpdateRecipientsMenuItem::class,
+                    \Fab\Vidi\View\MenuItem\DividerMenuItem::class,
+                ]
+            )
             ->register();
     }
 );
