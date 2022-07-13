@@ -18,12 +18,12 @@
 			"Fab\\NewsletterRecipients\\": "Classes/"
 		}
 	},
-	"replace": {
-		"fab/newsletter-recipients": "self.version"
-	},
 	"extra": {
 		"typo3/cms": {
 			"extension-key": "newsletter_recipients"
 		}
+	},
+	"require": {
+		"fab/messenger": "^4 || dev-master"
 	}
 }
