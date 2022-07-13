@@ -28,7 +28,7 @@ class UpdateRecipientsMenuItem extends AbstractComponentView
     public function render()
     {
         $this->loadRequireJsCode();
-        $result = sprintf('<li><a href="%s" class="btn-edit-many-recipients">%s %s</a></li>',
+        $result = sprintf('<li><a href="%s" class="dropdown-item btn-edit-many-recipients">%s %s</a></li>',
             $this->getUpdateRecipientsUri(),
             $this->getIconFactory()->getIcon('mimetypes-open-document-database', Icon::SIZE_SMALL),
             $this->getLanguageService()->sL('LLL:EXT:newsletter_recipients/Resources/Private/Language/locallang.xlf:action.update.recipients')
