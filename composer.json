@@ -24,6 +24,6 @@
 		}
 	},
 	"require": {
-		"fab/messenger": "^4 || dev-master"
+		"fab/messenger": "^4 || dev-master || dev-develop"
 	}
 }
