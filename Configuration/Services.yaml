@@ -1,0 +1,17 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Fab\NewsletterRecipients\:
+    resource: '../Classes/*'
+    exclude:
+      - '../Classes/Domain/Model/*'
+
+  Fab\NewsletterRecipients\Controller\NewsletterRecipientController:
+    public: true
+    tags: ['controller.service_arguments']
+
+  Fab\NewsletterRecipients\Domain\Repository\NewsletterRecipientRepository:
+    public: true
