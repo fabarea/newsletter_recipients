@@ -9,21 +9,26 @@ namespace Fab\NewsletterRecipients\Domain\Repository;
  * LICENSE.md file that was distributed with this source code.
  */
 
+use Fab\NewsletterRecipients\Domain\Model\NewsletterRecipient;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * Class NewsletterRecipientRepository
+ * @extends Repository<NewsletterRecipient>
  */
-class NewsletterRecipientRepository extends ActionController
+class NewsletterRecipientRepository extends Repository
 {
 
     /**
      * @var string
      */
     protected $tableName = 'tx_newsletter_recipient';
+    public function __construct(private \TYPO3\CMS\Core\Database\ConnectionPool $connectionPool)
+    {
+    }
 
     /**
      * @return void
@@ -32,7 +37,7 @@ class NewsletterRecipientRepository extends ActionController
     {
         $this->getQueryBuilder()
             ->delete($this->tableName)
-            ->execute();
+            ->executeQuery();
     }
 
     /**
@@ -51,8 +56,8 @@ class NewsletterRecipientRepository extends ActionController
                     $this->getQueryBuilder()->expr()->literal($email)
                 )
             )
-        ->execute()
-        ->fetch();
+        ->executeQuery()
+        ->fetchAssociative();
         return !empty($record);
     }
 
@@ -64,7 +69,7 @@ class NewsletterRecipientRepository extends ActionController
         $result = $this->getQueryBuilder()
             ->insert($this->tableName)
             ->values($values)
-            ->execute();
+            ->executeQuery();
         return (bool)$result;
     }
 
@@ -74,7 +79,7 @@ class NewsletterRecipientRepository extends ActionController
     protected function getQueryBuilder(): QueryBuilder
     {
         /** @var ConnectionPool $connectionPool */
-        $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
+        $connectionPool = $this->connectionPool;
         return $connectionPool->getQueryBuilderForTable($this->tableName);
     }
 

@@ -1,5 +1,5 @@
 <?php
-if (!defined('TYPO3_MODE')) die ('Access denied.');
+if (!defined('TYPO3')) die ('Access denied.');
 
 return [
 	'ctrl' => [
@@ -34,71 +34,34 @@ return [
 		'hidden' => [
 			'label' => 'LLL:EXT:newsletter_recipients/Resources/Private/Language/tx_newsletter_recipient.xlf:hidden',
 			'config' => [
-				'type' => 'input',
+				'type' => 'check',
+				'default' => 0,
 			],
 		],
 		'first_name' => [
 			'label' => 'LLL:EXT:newsletter_recipients/Resources/Private/Language/tx_newsletter_recipient.xlf:first_name',
 			'config' => [
 				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim',
+				'max' => 255,
 			],
 		],
 		'last_name' => [
 			'label' => 'LLL:EXT:newsletter_recipients/Resources/Private/Language/tx_newsletter_recipient.xlf:last_name',
 			'config' => [
 				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim',
+				'max' => 255,
 			],
 		],
 		'email' => [
 			'label' => 'LLL:EXT:newsletter_recipients/Resources/Private/Language/tx_newsletter_recipient.xlf:email',
 			'config' => [
-				'type' => 'input',
+				'type' => 'email',
+				'size' => 30,
 			],
 		],
-	],
-    'grid' => [
-        'facets' => [
-            'uid',
-            'first_name',
-            'last_name',
-            'email',
-            \Fab\Vidi\Facet\StandardFacet::class => [
-                'name' => 'hidden',
-                'label' => 'LLL:EXT:newsletter_recipients/Resources/Private/Language/locallang.xlf:active',
-                'suggestions' => [
-                    '0' => 'LLL:EXT:newsletter_recipients/Resources/Private/Language/locallang.xlf:active.0',
-                    '1' => 'LLL:EXT:newsletter_recipients/Resources/Private/Language/locallang.xlf:active.1'
-                ]
-            ],
-        ],
-        'columns' => [
-            '__checkbox' => [
-                'renderer' => \Fab\Vidi\Grid\CheckBoxRenderer::class,
-            ],
-            'uid' => [
-                'visible' => false,
-                'label' => 'Id',
-                'width' => '5px',
-            ],
-            'first_name' => [
-                'visible' => true,
-                'editable' => true,
-            ],
-            'last_name' => [
-                'visible' => true,
-                'editable' => true,
-            ],
-            'email' => [
-                'visible' => true,
-                'editable' => true,
-            ],
-            'hidden' => [
-                'renderer' => \Fab\Vidi\Grid\VisibilityRenderer::class,
-                'width' => '3%',
-            ],
-            '__buttons' => [
-                'renderer' => \Fab\Vidi\Grid\ButtonGroupRenderer::class,
-            ],
-        ],
     ],
 ];

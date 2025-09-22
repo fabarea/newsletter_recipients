@@ -24,6 +24,9 @@
 			<trans-unit id="action.update.recipients">
 				<source>Update recipients</source>
 			</trans-unit>
+			<trans-unit id="plugin.title">
+				<source>Newsletter Recipients</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
