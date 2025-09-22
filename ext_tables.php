@@ -8,9 +8,6 @@ defined('TYPO3') || die('Access denied.');
 call_user_func(
     function () {
 
-        // Allow domain model to be on standard pages.
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_newsletter_recipient');
-
         // Icons are now registered via Configuration/Icons.php
 
 

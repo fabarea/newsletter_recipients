@@ -22,9 +22,9 @@ class NewsletterRecipientController extends ActionController
     /**
      * @return void
      */
-    public function editManyAction(): void
+    public function editManyAction(): \Psr\Http\Message\ResponseInterface
     {
-
+        return $this->htmlResponse();
     }
 
     /**
@@ -32,7 +32,7 @@ class NewsletterRecipientController extends ActionController
      * @param bool $deleteExistingRecipients
      * @return string
      */
-    public function updateManyAction(string $recipientCsvList = '', $deleteExistingRecipients = true): string
+    public function updateManyAction(string $recipientCsvList = '', $deleteExistingRecipients = true): \Psr\Http\Message\ResponseInterface
     {
         if ($deleteExistingRecipients) {
             $this->getNewsletterRecipientRepository()->deleteAllAction();
@@ -63,7 +63,7 @@ class NewsletterRecipientController extends ActionController
             }
 
         }
-        return sprintf('Created %s/%s', $counter, $numberOfRecipients);
+        return $this->htmlResponse(sprintf('Created %s/%s', $counter, $numberOfRecipients));
     }
 
     /**

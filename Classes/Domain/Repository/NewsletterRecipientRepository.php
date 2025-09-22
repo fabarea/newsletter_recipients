@@ -26,6 +26,9 @@ class NewsletterRecipientRepository extends Repository
      * @var string
      */
     protected $tableName = 'tx_newsletter_recipient';
+    public function __construct(private \TYPO3\CMS\Core\Database\ConnectionPool $connectionPool)
+    {
+    }
 
     /**
      * @return void
@@ -76,7 +79,7 @@ class NewsletterRecipientRepository extends Repository
     protected function getQueryBuilder(): QueryBuilder
     {
         /** @var ConnectionPool $connectionPool */
-        $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
+        $connectionPool = $this->connectionPool;
         return $connectionPool->getQueryBuilderForTable($this->tableName);
     }
 

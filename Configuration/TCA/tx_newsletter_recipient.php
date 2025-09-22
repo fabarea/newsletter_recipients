@@ -59,10 +59,8 @@ return [
 		'email' => [
 			'label' => 'LLL:EXT:newsletter_recipients/Resources/Private/Language/tx_newsletter_recipient.xlf:email',
 			'config' => [
-				'type' => 'input',
+				'type' => 'email',
 				'size' => 30,
-				'eval' => 'trim,email',
-				'max' => 255,
 			],
 		],
     ],
