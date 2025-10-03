@@ -9,9 +9,26 @@ call_user_func(
     function () {
 
         // Icons are now registered via Configuration/Icons.php
+        
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_newsletter_recipient');
 
+        // Add new sprite icon.
+        $icons = [
+            'recipients' => 'EXT:newsletter_recipients/Resources/Public/Images/newsletter_recipients.png',
+        ];
 
-        // Module registration is now handled via Configuration/Backend/Modules.php
+        /** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
+        $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+        foreach ($icons as $key => $icon) {
+            $iconRegistry->registerIcon('extensions-newsletter-recipients-' . $key,
+                \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+                [
+                    'source' => $icon
+                ]
+            );
+        }
+        unset($iconRegistry);
+
 
         // Default User TSConfig to be added in any case.
         TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig('
@@ -20,7 +37,11 @@ call_user_func(
             options.hideModules.user := addToList(NewsletterRecipientsM1)
 
         ');
+
+        $configuration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+            \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
+        )->get('newsletter_recipients');
+
+
     }
 );
-
-
