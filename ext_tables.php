@@ -10,7 +10,6 @@ call_user_func(
 
         // Icons are now registered via Configuration/Icons.php
         
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_newsletter_recipient');
 
         // Add new sprite icon.
         $icons = [
