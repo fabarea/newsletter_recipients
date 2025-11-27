@@ -1,3 +1,7 @@
+## 3.0.0 (2025-11-27)
+
+FEATURE: Compatibility typo3 v12
+
 ## 2.0.0 (2022-07-14)
 
 Enable update menu item again
@@ -10,4 +14,3 @@ Add return type
 Fix TCA
 Streamline ext_emconf.php
 [TASK] Prepare next release
-
