@@ -1,3 +1,11 @@
+## NEW_VERSION (2025-11-28)
+
+FIX: update messenger
+
+## NEW_VERSION (2025-11-28)
+
+FIX: update messenger
+
 ## 3.0.0 (2025-11-27)
 
 FEATURE: Compatibility typo3 v12
