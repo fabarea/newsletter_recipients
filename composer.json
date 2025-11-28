@@ -25,6 +25,6 @@
 	},
 	"require": {
 		"typo3/cms-core": "^12.4 || ^13.0",
-		"fab/messenger": "^4 || dev-master || dev-develop || dev-feature/v12 || dev-feat/v13"
+		"fab/messenger": "^5 || dev-develop"
 	}
 }
